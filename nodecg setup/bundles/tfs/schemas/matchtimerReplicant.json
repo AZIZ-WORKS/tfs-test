@@ -1,0 +1,57 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "properties": {
+    "timeInSeconds": {
+      "type": "integer",
+      "description": "Time in seconds for the match timer",
+      "minimum": 0
+    },
+    "gameType": {
+      "type": "string",
+      "enum": ["football", "basketball", "volleyball"],
+      "description": "Type of the match (football, basketball, or volleyball)"
+    },
+    "isRunning": {
+      "type": "boolean",
+      "description": "Indicates whether the timer is running or not"
+    },
+    "teamA": {
+      "type": "string",
+      "description": "Name of Team A"
+    },
+    "teamB": {
+      "type": "string",
+      "description": "Name of Team B"
+    },
+    "scoreA": {
+      "type": "integer",
+      "description": "Score of Team A"
+    },
+    "scoreB": {
+      "type": "integer",
+      "description": "Score of Team B"
+    },
+    "extraTime": {
+      "type": ["integer", "null"],
+      "description": "Extra time in minutes (if applicable)"
+    },
+    "isVisible": {
+  "type": "boolean",
+  "description": "Indicates whether the timer is visible or not",
+  "default": true
+}
+  },
+  "additionalProperties": false,
+  "required": ["timeInSeconds", "gameType", "isRunning", "teamA", "teamB", "scoreA", "scoreB"],
+  "default": {
+    "timeInSeconds": 0,
+    "gameType": "football",
+    "isRunning": false,
+    "teamA": "Team A",
+    "teamB": "Team B",
+    "scoreA": 0,
+    "scoreB": 0,
+    "extraTime": null
+  }
+}
